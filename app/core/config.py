@@ -5,7 +5,6 @@ class Settings(BaseSettings):
     SECRET_KEY: str = "supersecretkey_please_change_in_production"
     ALGORITHM: str = "HS256"
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 30
-    OLLAMA_BASE_URL: str = "http://host.docker.internal:11434"
     GEMINI_API_KEY: str | None = None
 
     model_config = SettingsConfigDict(env_file=".env", extra="ignore")
