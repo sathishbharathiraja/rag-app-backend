@@ -4,7 +4,7 @@ from typing import List
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.future import select
 from langchain_text_splitters import RecursiveCharacterTextSplitter, MarkdownHeaderTextSplitter
-from langchain_google_genai import GoogleGenerativeAIEmbeddings
+
 from langchain_community.document_loaders import TextLoader, Docx2txtLoader
 import pymupdf4llm
 from langchain_core.documents import Document as LangchainDocument
