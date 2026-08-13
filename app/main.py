@@ -4,6 +4,7 @@ from app.api import auth, documents, chat
 from app.core.database import engine, Base
 from sqlalchemy import text
 import contextlib
+from app.core.config import settings
 
 @contextlib.asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -19,7 +20,7 @@ app = FastAPI(title="BigHammer RAG API", lifespan=lifespan)
 # Add CORS middleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://127.0.0.1:5173"],
+    allow_origins=[settings.FRONTEND_URL, "http://127.0.0.1:5173"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
